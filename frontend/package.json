@@ -3,19 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.11.3",
     "@base-ui/react": "^1.9.0",
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "^7.10.0",
     "@tanstack/react-query": "^5.104.2",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.4.0",
     "jotai": "^3.0.1",
     "lucide-react": "^1.55.0",
     "next": "16.4.0",
+    "next-auth": "5.0.0-beta.32",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "shadcn": "^4.21.4",
@@ -28,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
+    "prisma": "7.10.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

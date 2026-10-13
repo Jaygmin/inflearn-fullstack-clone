@@ -11,7 +11,7 @@ function makeQueryClient() {
   });
 }
 
-let browserQueryClient: QueryClient | undefined = undefined;
+let browserQueryClient: QueryClient | undefined;
 
 export function getQueryClient() {
   if (environmentManager.isServer()) {
@@ -19,6 +19,5 @@ export function getQueryClient() {
     return makeQueryClient();
   }
   // 브라우저: React가 초기 렌더 중 suspend 되어도 클라이언트를 다시 만들지 않도록 재사용
-  if (!browserQueryClient) browserQueryClient = makeQueryClient();
-  return browserQueryClient;
+  return (browserQueryClient ??= makeQueryClient());
 }
